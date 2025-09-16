@@ -24,15 +24,25 @@ This repository demonstrates how to deploy a **custom Apache (httpd) web server*
 2. Configure:
    - **Name:** `Custom-Apache-Web-Server`  
    - **AMI:** Amazon Linux 2023  
-   ![Launch EC2 Instance Screenshot](images/instance-name.jpg)
+   ![AMI Screenshot](images/instance-name.jpg)
 
    - **Instance Type:** `t2.micro` (Free Tier eligible)  
+   ![Instance Type Screenshot](images/choose-instance-type.jpg)
+
    - **Key Pair:** choose as needed (you can use EC2 Instance Connect if not using an SSH key)  
+   ![Choosing a key pair Screenshot](images/choose-a-key-pair.jpg)
+
    - **Networking:** Enable **Auto-assign Public IP**  
+   ![Auto-assign Public IP Screenshot](images/enable-auto-assign-ip.jpg)
+
    - **Security Group (Inbound):**  
+   ![SSH & HTTP rules setup Screenshot](images/ssh-http-rules.jpg)
+
      - **SSH (22)** — Source: *your IP*  
      - **HTTP (80)** — Source: `0.0.0.0/0` (allow IPv4 web traffic)  
+     
    - **User Data:** paste the provided user-data script (below)
+   ![User Data Screenshot](images\webpage-user-data.jpg)
 
 3. Launch instance, then open `http://<PUBLIC_IPV4>` in your browser.
 
