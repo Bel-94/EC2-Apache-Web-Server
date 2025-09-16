@@ -127,5 +127,7 @@ systemctl restart httpd
    --protocol tcp \
    --port 80 \
    --cidr 0.0.0.0/0
+```
 
+2. SSH into the instance (or use EC2 Instance Connect if no key pair)
 
