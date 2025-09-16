@@ -268,7 +268,7 @@ Use IAM roles if you automate with CLI.
 
 ## 👩‍💻 Authors
 
-- **Your Name** – [GitHub](https://github.com/Bel-94) | [LinkedIn](https://www.linkedin.com/in/belinda-ntinyari/)  
+- **Belinda Ntinyari** – [GitHub](https://github.com/Bel-94) | [LinkedIn](https://www.linkedin.com/in/belinda-ntinyari/)  
 
 ---
 
