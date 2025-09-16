@@ -83,17 +83,5 @@ EOF
 
 # Restart Apache to apply changes
 systemctl restart httpd
+```
 
-
-🔍 Verify the Web Server
-
-After your instance starts:
-
-Go to your EC2 Instances → Networking tab → copy the Public IPv4 address.
-
-In your browser, open:
-
-http://<PUBLIC_IPV4>
-
-
-You should see your custom web page 🎉
