@@ -129,14 +129,15 @@ systemctl restart httpd
    --cidr 0.0.0.0/0
 ```
 
- **SSH into the instance (or use EC2 Instance Connect if no key pair)**  
-   ```bash
-   ssh ec2-user@<PUBLIC_IPV4>
-   ```
+2.  **SSH into the instance (or use EC2 Instance Connect if no key pair)**  
+```bash
+ssh ec2-user@<PUBLIC_IPV4>
+```
 
 3. **Check Apache (httpd) status**
-
+```bash
 systemctl status httpd
+```
 
 
 If you see:
@@ -147,57 +148,54 @@ Unit httpd.service could not be found.
 → Apache isn’t installed.
 
 4. **Install Apache manually**
-
+```bash
 sudo dnf update -y
 sudo dnf install -y httpd
-
+```
 
 5. **Start and enable Apache**
-
+```bash
 sudo systemctl start httpd
 sudo systemctl enable httpd
+```
 
-
-6. **Create or restore the custom index page**
-Minimal test page:
-
+6. **Create or restore the custom index page(Minimal test page)**
+```bash
 sudo tee /var/www/html/index.html <<'HTML'
 <h1>Hello from Apache on EC2 (Amazon Linux 2023)</h1>
 HTML
-
+```
 
 Or reapply the full HTML from the User Data script (recommended).
 
 7. **Test locally on the instance**
-
+```bash
 curl http://localhost
-
+```
 
 Expect to see the HTML output.
 
 8. **Test from your browser**
-
+```bash
 http://<PUBLIC_IPV4>
-
+```
 
 9. **(Optional) Re-run user data script if automation failed**
 
 Check for script saved by cloud-init:
-
+```bash
 sudo ls -l /var/lib/cloud/instance/scripts/
-
+```
 
 If you find user-data.txt (or similar), re-run:
-
+```bash
 sudo bash /var/lib/cloud/instance/scripts/user-data.txt
-
+```
 
 10. **Check cloud-init logs (for debugging)**
-
+```bash
 sudo tail -n 200 /var/log/cloud-init-output.log
 sudo tail -n 200 /var/log/cloud-init.log
-
-
----
+```
 
 
