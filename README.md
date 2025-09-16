@@ -40,9 +40,12 @@ This repository demonstrates how to deploy a **custom Apache (httpd) web server*
 
      - **SSH (22)** — Source: *your IP*  
      - **HTTP (80)** — Source: `0.0.0.0/0` (allow IPv4 web traffic)  
-     
+
    - **User Data:** paste the provided user-data script (below)
-   ![User Data Screenshot](images\webpage-user-data.jpg)
+   ![User Data Screenshot](images/webpage-user-data.jpg)
+
+   - **Launch Instance:**
+   ![Launched Instance Screenshot](images/launched-instance.jpg)
 
 3. Launch instance, then open `http://<PUBLIC_IPV4>` in your browser.
 
