@@ -24,7 +24,7 @@ This repository demonstrates how to deploy a **custom Apache (httpd) web server*
 2. Configure:
    - **Name:** `Custom-Apache-Web-Server`  
    - **AMI:** Amazon Linux 2023  
-   ![Launch EC2 Instance Screenshot](images/launch-ec2.png)
+   ![Launch EC2 Instance Screenshot](images/instance-name.jpg)
 
    - **Instance Type:** `t2.micro` (Free Tier eligible)  
    - **Key Pair:** choose as needed (you can use EC2 Instance Connect if not using an SSH key)  
