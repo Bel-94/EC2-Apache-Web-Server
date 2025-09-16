@@ -85,13 +85,22 @@ EOF
 systemctl restart httpd
 ```
 
-🔍 Verify the Web Server
+---
 
-After your instance starts:
+## ✅ Verify the Web Server
+1. In the **EC2 Console → Instances**, select your instance.  
+2. Copy the **Public IPv4 address**.  
+3. Open in your browser:  
 
-Go to your EC2 Instances → Networking tab → copy the Public IPv4 address.
-
-In your browser, open:
 http://<PUBLIC_IPV4>
 
-You should see your custom web page 🎉
+4. You should see the custom webpage 🎉  
+
+---
+
+## 🛠 Troubleshooting — Real Issue Encountered & Resolution
+
+### 🔎 Symptom Observed
+- Browser could not reach the page.  
+- Running `systemctl status httpd` returned:  
+
