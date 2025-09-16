@@ -265,3 +265,13 @@ Use IAM roles if you automate with CLI.
 - Add **CI/CD** to deploy content changes automatically.  
 
 ---
+
+## 👩‍💻 Authors
+
+- **Your Name** – [GitHub](https://github.com/Bel-94) | [LinkedIn](https://www.linkedin.com/in/belinda-ntinyari/)  
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).  
