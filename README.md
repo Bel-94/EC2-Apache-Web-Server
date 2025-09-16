@@ -14,6 +14,10 @@ This repository demonstrates how to deploy a **custom Apache (httpd) web server*
 
 ---
 
+## Architecture Overview
+![EC2 Architecture](images/aws_ec2_apache_architecture.png)
+
+
 ## ⚙️ Quick Start (Console)
 1. Sign in to the AWS Console → **EC2 → Launch Instance**.  
 2. Configure:
