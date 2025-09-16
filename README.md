@@ -129,8 +129,10 @@ systemctl restart httpd
    --cidr 0.0.0.0/0
 ```
 
-2. **SSH into the instance (or use EC2 Instance Connect if no key pair)** 
-ssh ec2-user@<PUBLIC_IPV4>
+ **SSH into the instance (or use EC2 Instance Connect if no key pair)**  
+   ```bash
+   ssh ec2-user@<PUBLIC_IPV4>
+   ```
 
 3. **Check Apache (httpd) status**
 
