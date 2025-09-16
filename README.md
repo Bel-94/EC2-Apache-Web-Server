@@ -219,4 +219,31 @@ sudo tail -n 200 /var/log/cloud-init-output.log
 sudo tail -n 200 /var/log/cloud-init.log
 ```
 
+---
 
+## ❓ Why This Happened
+
+User Data can fail if:
+
+- A package repo update fails.  
+- The instance boots before networking is ready.  
+- `cloud-init` logs show an error.  
+- The missing `httpd` unit meant the install step did not complete.  
+
+---
+
+## 🔍 Additional Troubleshooting Tips
+
+- **Check cloud-init logs:**
+```bash
+sudo cat /var/log/cloud-init-output.log
+```
+If using IPv6, add ::/0 for HTTP (optional). 0.0.0.0/0 is sufficient for IPv4.
+
+View Apache logs if service fails to start:
+```bash
+sudo journalctl -u httpd -n 100
+```
+Consider Elastic IP for a stable IP.
+
+Use IAM roles if you automate with CLI.
