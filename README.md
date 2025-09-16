@@ -112,9 +112,9 @@ systemctl restart httpd
 1. In the **EC2 Console → Instances**, select your instance.  
 2. Copy the **Public IPv4 address**.  
 3. Open in your browser:  
-
- http://<PUBLIC_IPV4>
-
+```bash
+http://<PUBLIC_IPV4>
+```
 4. You should see the custom webpage 🎉  
 
 ---
