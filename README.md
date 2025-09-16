@@ -92,7 +92,7 @@ systemctl restart httpd
 2. Copy the **Public IPv4 address**.  
 3. Open in your browser:  
 
-http://<PUBLIC_IPV4>
+ http://<PUBLIC_IPV4>
 
 4. You should see the custom webpage 🎉  
 
@@ -103,4 +103,6 @@ http://<PUBLIC_IPV4>
 ### 🔎 Symptom Observed
 - Browser could not reach the page.  
 - Running `systemctl status httpd` returned:  
+
+ Unit httpd.service could not be found.
 
