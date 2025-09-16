@@ -106,3 +106,26 @@ systemctl restart httpd
 
  Unit httpd.service could not be found.
 
+
+### ⚡ Root Causes Identified
+- Security Group initially allowed only **SSH (port 22)** (no HTTP rule).  
+- The **EC2 User Data** did not run correctly at boot, so Apache was never installed.  
+
+### 📝 Step-by-Step Fix
+1. **Add HTTP inbound rule (Console)**  
+ - EC2 → Instances → Select instance → **Security** → click **security group name** → **Edit inbound rules** → Add rule:  
+   - **Type:** HTTP  
+   - **Protocol:** TCP  
+   - **Port range:** 80  
+   - **Source:** `0.0.0.0/0`  
+ - Save rules.  
+
+ *(CLI alternative — requires AWS CLI configured)*:  
+ ```bash
+ aws ec2 authorize-security-group-ingress \
+   --group-id sg-0123456789abcdef0 \
+   --protocol tcp \
+   --port 80 \
+   --cidr 0.0.0.0/0
+
+
