@@ -48,6 +48,7 @@ This repository demonstrates how to deploy a **custom Apache (httpd) web server*
    ![Launched Instance Screenshot](images/launched-instance.jpg)
 
 3. Launch instance, then open `http://<PUBLIC_IPV4>` in your browser.
+![Webpage Screenshot](images/webpage.jpg)
 
 ---
 
