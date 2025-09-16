@@ -247,3 +247,21 @@ sudo journalctl -u httpd -n 100
 Consider Elastic IP for a stable IP.
 
 Use IAM roles if you automate with CLI.
+
+---
+
+## 🎯 Key Learnings
+
+- Always verify **Security Group inbound rules** (HTTP is required for web traffic).  
+- `systemctl` output — “Unit ... could not be found” usually means the package isn’t installed.  
+- **Cloud-init / User Data** is powerful but always check its logs to confirm it ran successfully.  
+
+---
+
+## 🔮 Next Steps
+
+- Add **HTTPS** (ACM + Load Balancer or Nginx + Certbot).  
+- Provision with **Terraform or CloudFormation** for reproducible infra.  
+- Add **CI/CD** to deploy content changes automatically.  
+
+---
