@@ -119,7 +119,7 @@ http://<PUBLIC_IPV4>
 
 ---
 
-## 🛠 Troubleshooting — Real Issue Encountered & Resolution
+## Troubleshooting — Real Issue Encountered & Resolution
 
 ### Symptom Observed
 - Browser could not reach the page.  
