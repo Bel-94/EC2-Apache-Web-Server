@@ -1,10 +1,10 @@
-# 🚀 Deploy a Custom Apache Web Server on Amazon EC2
+# Deploy a Custom Apache Web Server on Amazon EC2
 
 This repository demonstrates how to deploy a **custom Apache (httpd) web server** on an **Amazon Linux 2023 EC2 instance**, automatically configured at launch using **EC2 User Data**. It includes a sample custom webpage and troubleshooting notes from a real run-through.
 
 ---
 
-## 📖 Project Overview
+## Project Overview
 - **Cloud Provider:** AWS  
 - **Service:** Amazon EC2  
 - **OS:** Amazon Linux 2023  
@@ -19,7 +19,7 @@ This repository demonstrates how to deploy a **custom Apache (httpd) web server*
 
 ---
 
-## ⚙️ Quick Start (Console)
+## Quick Start (Console)
 1. Sign in to the AWS Console → **EC2 → Launch Instance**.  
 2. Configure:
    - **Name:** `Custom-Apache-Web-Server`  
@@ -52,7 +52,7 @@ This repository demonstrates how to deploy a **custom Apache (httpd) web server*
 
 ---
 
-## 🧾 User Data Script (paste into the User Data field)
+## User Data Script (paste into the User Data field)
 ```bash
 #!/bin/bash
 # Update package list and install Apache
@@ -108,31 +108,31 @@ systemctl restart httpd
 
 ---
 
-## ✅ Verify the Web Server
+## Verify the Web Server
 1. In the **EC2 Console → Instances**, select your instance.  
 2. Copy the **Public IPv4 address**.  
 3. Open in your browser:  
 ```bash
 http://<PUBLIC_IPV4>
 ```
-4. You should see the custom webpage 🎉  
+4. You should see the custom webpage   
 
 ---
 
 ## 🛠 Troubleshooting — Real Issue Encountered & Resolution
 
-### 🔎 Symptom Observed
+### Symptom Observed
 - Browser could not reach the page.  
 - Running `systemctl status httpd` returned:  
 
  Unit httpd.service could not be found.
 
 
-### ⚡ Root Causes Identified
+### Root Causes Identified
 - Security Group initially allowed only **SSH (port 22)** (no HTTP rule).  
 - The **EC2 User Data** did not run correctly at boot, so Apache was never installed.  
 
-### 📝 Step-by-Step Fix
+### Step-by-Step Fix
 1. **Add HTTP inbound rule (Console)**  
  - EC2 → Instances → Select instance → **Security** → click **security group name** → **Edit inbound rules** → Add rule:  
    - **Type:** HTTP  
@@ -221,7 +221,7 @@ sudo tail -n 200 /var/log/cloud-init.log
 
 ---
 
-## ❓ Why This Happened
+## Why This Happened
 
 User Data can fail if:
 
@@ -232,7 +232,7 @@ User Data can fail if:
 
 ---
 
-## 🔍 Additional Troubleshooting Tips
+## Additional Troubleshooting Tips
 
 - **Check cloud-init logs:**
 ```bash
@@ -250,7 +250,7 @@ Use IAM roles if you automate with CLI.
 
 ---
 
-## 🎯 Key Learnings
+## Key Learnings
 
 - Always verify **Security Group inbound rules** (HTTP is required for web traffic).  
 - `systemctl` output — “Unit ... could not be found” usually means the package isn’t installed.  
@@ -258,7 +258,7 @@ Use IAM roles if you automate with CLI.
 
 ---
 
-## 🔮 Next Steps
+## Next Steps
 
 - Add **HTTPS** (ACM + Load Balancer or Nginx + Certbot).  
 - Provision with **Terraform or CloudFormation** for reproducible infra.  
@@ -266,12 +266,12 @@ Use IAM roles if you automate with CLI.
 
 ---
 
-## 👩‍💻 Authors
+## Author
 
 - **Belinda Ntinyari** – [GitHub](https://github.com/Bel-94) | [LinkedIn](https://www.linkedin.com/in/belinda-ntinyari/)  
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).  
